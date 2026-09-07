@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Meine Webseite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+
+<body>
+    <div class="language-switcher">
+        <button class="lang-button" id="language-button" type="button" aria-haspopup="true" aria-expanded="false">
+            Übersetzen
+        </button>
+        <button class="lang-button drawing-toggle" id="drawing-toggle" type="button" aria-label="Zeichenmodus aktivieren" data-i18n-aria="drawingEnableLabel" aria-pressed="false">
+            ✏️
+        </button>
+        <div class="lang-menu" id="lang-menu" hidden>
+            <button class="lang-option" type="button" data-lang="de">Deutsch</button>
+            <button class="lang-option" type="button" data-lang="en">English</button>
+            <button class="lang-option" type="button" data-lang="fr">Français</button>
+            <button class="lang-option" type="button" data-lang="es">Español</button>
+            <button class="lang-option" type="button" data-lang="it">Italiano</button>
+            <button class="lang-option" type="button" data-lang="ja">日本語</button>
+        </div>
+    </div>
+    
+<!--Blütenblätter-->
+
+<section class="hero">
+    <div class="petals"></div>
+    <header data-i18n="welcome">Willkommen auf meiner Webseite</header>
+</section>
+
+<!--Waagerechte Linie-->
+
+<div class="trenner"></div>
+
+<!--Flexbox für Gif und Über mich-->
+
+<section class="oberer-bereich">
+    <div class="gif">
+        <img src="images/Kurayami.gif" alt="Programmieren" loading="lazy">
+    </div>
+    <div class="text">
+        <h2 data-i18n="aboutTitle">Zu meiner Person</h2><br>
+        <p data-i18n="hi">Hi :3</p><br>
+        <p data-i18n-html="aboutText">mein Name ist Kurayami und mein Ziel ist es Fachinformatiker zu werden,<br>
+         um anschließend in die Cybersecurity zu gelangen.<br>
+        <br>
+        Ich bin derzeit 19 Jahre und diese Webseite ist mein erstes Projekt,<br>
+        dass stetig mit mir weiterwachsen wird. Also schau gern ab und zu mal vorbei.<br>
+        <br>
+        Auf dieser Seite findest du meine Hobbies, Musik, Projekte und meine Reiseziele,<br>
+         also fackel nicht lange und schau sie dir an.</p>
+    </div>
+</section>
+
+<!--Emojies für Hobbies in Flexbox-->
+
+<section class="unterer-bereich">
+    <h2 data-i18n="hobbiesTitle">Meine Hobbies</h2>
+    <div class="hobbies">
+        <div class="icon-box">
+            <i class="fa-solid fa-gamepad" onclick="toggleHobby(this)"></i>
+            <p class="hobby-text" data-i18n-html="gamesText">Ich habe mit 6 Jahren aktiv angefangen Videospiele zu spielen.<br>
+            Meine Hauptspiele waren Terraria und Minecraft auf der Xbox 360.<br>
+            Gleichzeitig habe ich auf der Gamecube Simpsons, Mario Kart, Ice Age und Lego Star Wars gespielt.<br>
+            <br>
+            Ab und zu war ich ebenfalls auf dem Gameboy unterwegs.<br>
+            <br>
+            Zu Weihnachten habe ich im Laufe der Jahre eine WII und PSP bekommen. Dort spielte ich viel Avatar und Sims.<br>
+            Auf der WII zusätzlich Go Vacation, Mario Kart, WII Party und Animal Crossing.<br>
+            <br>
+            Mit 12 Jahren kaufte ich mir meine Xbox One S, worauf mein Lieblingsspiel Overwatch war und bis heute ist.<br>
+            Zudem habe ich viel Dauntless, Fortnite, Sea of Thieves und Dead by Daylight gespielt.<br>
+            Aber auch andere Koop- und Cozy-Games.<br>
+            <br>
+            Im Laufe der Zeit kaufte ich mir dann auch ein DS vom Flohmarkt.<br>
+            Mit 18 kaufte ich mir meinen PC, auf dem ich weiterhin Overwatch, Dead by Daylight, Sims 4<br>
+            aber auch Where Winds Meet, Arc Raiders und andere Cozy-Spiele spiele.<br>
+            <br>
+            Mit Ende 18 habe ich mir dann eine Switch gekauft, auf der ich Animal Crossing, Zelda: Breath of the Wild und<br>
+            Stardew Valley spiele.<br>
+            <br>
+            </p>
+            <div class="hobby-subcategories">
+                <button class="hobby-subcategory-btn active" type="button" data-category="spiele" data-i18n="gamesLabel">Spiele</button>
+            </div>
+            <div class="spiele-liste">
+                    <p class="spiele-intro" data-i18n="gamesIntro">Hier ist eine Übersicht meiner liebsten Spiele.</p>
+                    <br>
+                <p data-i18n="favoritesLabel"></p>
+                <ol>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/2357570/Overwatch/', '_blank')">Overwatch</span></li>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/3564740/Where_Winds_Meet/', '_blank')">Where Winds Meet</span></li>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/381210/Dead_by_Daylight/', '_blank')">Dead by Daylight</span></li>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/1808500/ARC_Raiders/', '_blank')">Arc Raiders</span></li>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/1172620/Sea_of_Thieves_2026_Edition/', '_blank')">Sea of Thieves</span></li>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/2707930/Palia/', '_blank')">Palia</span></li>
+                    <li><span class="spiel-link" onclick="window.open('https://store.steampowered.com/app/1222670/The_Sims_4/', '_blank')">Sims 4</span></li>
+                </ol>
+            </div>
+        </div>
+        <div class="icon-box">
+            <i class="fa-solid fa-headphones" onclick="toggleHobby(this)"></i>
+            <p class="hobby-text" data-i18n-html="musicText">Hier findest du meine Spotify-Playlist.<br>
+                Tipp: Wenn du dich im Browser bei Spotify anmeldest, kannst du die Songs komplett hören.<br>
+                <br>
+                Ich spiele Klavier und konzentriere mich derzeit auf Stücke von Ludovico Einaudi.<br>
+                Zukünftig möchte ich auch eigene Songs entwerfen und veröffentlichen.<br>
+            <br></p>
+            <div class="hobby-subcategories">
+                <button class="hobby-subcategory-btn active" type="button" data-category="musik" data-i18n="musicLabel">Musik</button>
+            </div>
+            <iframe
+                class="spotify-player"
+                style="border-radius: 12px;"
+                src="https://open.spotify.com/embed/playlist/2NE1qHDsxFa5xzpV31M5L9?utm_source=generator&si=4676e792506e4f46"
+                width="100%"
+                height="460"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="icon-box">
+            <i class="fa-solid fa-book-open" onclick="toggleHobby(this)"></i>
+            <p class="hobby-text" data-i18n-html="bookText">Ich habe leider nicht so viel Zeit zum Lesen aber wenn ich die Zeit habe, dann findet man hier meine Lieblingsbücher.<br>
+            <br>
+            Ein absolutes Lieblingsbuch dessen weitere Bänder ich plane zu lesen ist Tintenherz.<br>
+            Davon gibt es eine Trilogie mit 4 Bänden.<br>
+            Tintenherz, Tintenblut, Tintentot und die Farbe der Rache.</p>
+            <div class="hobby-subcategories">
+                <button class="hobby-subcategory-btn active" type="button" data-category="bücher" data-i18n="booksLabel">Bücher</button>
+            </div>
+            <div class="bücher-liste">
+                <br>
+                <ol>
+                    <li><span class="buch-link" onclick="window.open('https://www.amazon.de/Tintenwelt-1-Tintenherz-Cornelia-Funke/dp/3751301364/ref=sr_1_2_sspa?crid=7G8FBLA5M71E&dib=eyJ2IjoiMSJ9._sL8XSjSbQewgMtTx8KAS35Achgiv81DX30enC_Ti8CTx908xCdN46YFFwuzyHwqADG4iBEn01PWz7Fe0hOUlDaX_PNWLm22p2dtdtiKgULM3bMJ7y3C5Ck8_6-4UNYSMGTrZhG-rvGmGpocTM763tfzUYTra_am9Hb7dbe7FRjz6Z3vK7GCLUW3jLOhjo_wqCwbGNpRCTmanhcfozi0EIusqXPyNNLW4zpEXrTkl4Q.XzrelE6ct6BRUOIQAghkjGllZD3V49_neewuiHp9Ac0&dib_tag=se&keywords=tintenherz+trilogie&qid=1786785277&sprefix=tintenherz%2Caps%2C102&sr=8-2-spons&aref=GWpIoHWnUs&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1', '_blank')">Tintenherz</span></li>
+                </ol>
+            </div>
+        </div>
+        <div class="icon-box">
+            <i class="fa-solid fa-paintbrush" onclick="toggleHobby(this)"></i>
+            <p class="hobby-text" data-i18n-html="paintDescription">Zeichnen ist eins meiner weiteren Hobbies. Erst auf Papier, dann digital.<br>
+            Mich interessieren besonders Wesen der Mythologie mit Flügeln, also Engel, Dämonen, gefallene Engel und Mischwesen.<br>
+            Aber nicht nur normale Zeichnungen, sondern auch selbstgemachte individuelle Sticker mit verschiedenen Designs und Graffiti.<br>
+            Probier doch mal ein Herz auf die Webseite zu malen.</p>
+            <div class="hobby-subcategories">
+                <button class="hobby-subcategory-btn active" type="button" data-category="malen" data-i18n="paintText">Malen</button>
+            </div>
+        </div>
+        <div class="icon-box tv-box">
+            <i class="fa-solid fa-tv" onclick="toggleHobby(this)"></i>
+            <div class="tv-subcategories" aria-label="TV-Unterkategorien" data-i18n-aria="tvCategoriesLabel">
+                <button class="tv-subcategory-btn active" type="button" data-category="filme" data-detail-key="movieText" data-i18n="movieLabel" data-text="Filme: Ich schaue gern spannende, atmosphärische Filme mit starker Story und coolen Soundtracks.">Filme</button>
+                <button class="tv-subcategory-btn" type="button" data-category="serien" data-detail-key="seriesText" data-i18n="seriesLabel" data-text="Serien: Meine liebsten Serien sind die, die man binge-watching durchziehen kann und trotzdem noch lange nachdenken.">Serien</button>
+                <button class="tv-subcategory-btn" type="button" data-category="animes" data-detail-key="animeText" data-i18n="animeLabel" data-text="Anime: Animes mag ich besonders wegen der starken Atmosphäre, Charaktere und den einzigartigen visuellen Stilen.">Animes</button>
+            </div>
+            <div class="tv-detail" aria-live="polite" data-i18n="movieDetail">Filme: Ich schaue gern spannende, atmosphärische Filme mit starker Story und coolen Soundtracks.</div>
+        </div>
+    </div>
+    <div id="hobby-display" class="hobby-display" aria-live="polite"></div>
+    <div class="unlocked-details-layout">
+        <p id="color-message-left" class="color-message color-message-left" data-i18n="colorMessageLeft">Streich die Welt lila</p>
+        <section id="unlocked-details" class="unlocked-details" aria-hidden="true">
+            <h2 data-i18n="unlockedDetailsTitle">Freigeschaltete Details</h2>
+            <div class="unlocked-detail-list">
+            <article class="unlocked-detail" data-detail-event="weather" role="button" tabindex="0" aria-label="Lieblingswetter anzeigen" data-i18n-aria="weatherAriaLabel">
+                <span class="unlocked-detail-copy">
+                    <span class="unlocked-detail-label" data-i18n="favoriteWeather">Lieblingswetter</span>
+                    <span class="unlocked-detail-value" data-i18n="favoriteWeatherValue">Gewitter</span>
+                </span>
+                <span class="detail-emoji weather-emoji" aria-label="Regenwolke" data-i18n-aria="rainCloudLabel">🌧️</span>
+            </article>
+            <article class="unlocked-detail" data-detail-event="food" role="button" tabindex="0" aria-label="Lieblingsessen anzeigen" data-i18n-aria="foodAriaLabel">
+                <span class="unlocked-detail-copy">
+                    <span class="unlocked-detail-label" data-i18n="favoriteFood">Lieblingsessen</span>
+                    <span class="unlocked-detail-value" data-i18n="favoriteFoodValue">Ramen</span>
+                </span>
+                <span class="detail-emoji food-emoji" aria-label="Ramen" data-i18n-aria="ramenLabel">🍜</span>
+            </article>
+            <article class="unlocked-detail" data-detail-event="color" role="button" tabindex="0" aria-label="Lieblingsfarbe anzeigen" data-i18n-aria="colorAriaLabel">
+                <span class="unlocked-detail-copy">
+                    <span class="unlocked-detail-label" data-i18n="favoriteColor">Lieblingsfarbe</span>
+                    <span class="unlocked-detail-value" data-i18n="favoriteColorValue">Dunkel lila</span>
+                </span>
+                <span class="detail-emoji color-emoji" aria-label="Lila" data-i18n-aria="purpleLabel">💜</span>
+            </article>
+            </div>
+        </section>
+        <p id="color-message-right" class="color-message color-message-right" data-i18n-html="colorDefinition">Lila<br>die königliche Farbe, die mit Weisheit, Intuition, Reflektion und Kreativität verbunden ist.</p>
+    </div>
+</section>
+
+<!--Karte-->
+
+<section class="map-section">
+    <h2 data-i18n="destinationsTitle">Meine Reiseziele</h2>
+    <div class="map-wrapper">
+        <div id="map"></div>
+        <div id="location-info">
+            <button id="close-info" type="button" aria-label="Schließen" data-i18n-aria="closeLabel">x</button>
+            <img id="location-image" src="" alt="">
+            <h2 id="location-title"></h2>
+            <p id="location-text"></p>
+        </div>
+    </div>
+</section>
+
+<section class="Projekt-Section">
+    <div class="projekte">
+        <h2 data-i18n="projectsTitle">Projekte</h2>
+        <div class="projekt-subcategories">
+            <button class="projekt-subcategory-btn" type="button" data-category="geplante-Projekte" data-text="Sims-CC Änderungen&#10;Homelab: Netzwerk, Linux und Server" data-text-key="plannedProjectsText" data-i18n="plannedProjects">Geplante Projekte</button>
+            <button class="projekt-subcategory-btn" type="button" data-category="laufende-Projekte" data-text="Meine Webseite" data-text-key="ongoingProjectsText" data-i18n="ongoingProjects">Laufende Projekte</button>
+            <button class="projekt-subcategory-btn" type="button" data-category="abgeschlossene-Projekte" data-text="Keine" data-text-key="completedProjectsText" data-i18n="completedProjects">Abgeschlossene Projekte</button>
+        </div>
+        <div id="projekt-display" class="projekt-display" aria-live="polite"></div>
+    </div>
+</section>
+
+<section class="Kontakt-Section">
+    <div class="Kontakt">
+        <h2 data-i18n="contactTitle">Kontakt</h2>
+        <div class="kontakt-inhalte">
+            <p class="kontakt-text"><span data-i18n="emailLabel">Email</span>: kurayami.thom@outlook.de</p>
+            <div class="kontakt-subkategorie">
+                <button class="discord-link" type="button" onclick="window.open('https://discord.com/users/953998610054385734/', '_blank', 'noopener,noreferrer')"><span data-i18n="discordLabel">Discord</span>: kshock_ep</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+<footer>
+    <p data-i18n="footerText">🌙 Made by Kurayami · 2026</p>
+</footer>
+
+</body>
+
+</html>
