@@ -979,7 +979,7 @@ const map = L.map('map', {
     maxBoundsViscosity: 1.0
 }).setView([20.0, 0.0], 2.5);
 
-L.tileLayer(`https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png`, {
+L.tileLayer(`https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_31pn_1_f3c64679e4dc61abb22e5842`, {
     attribution: `&copy; OpenStreetmap &copy; CARTO`,
     noWrap: true
 }).addTo(map);
