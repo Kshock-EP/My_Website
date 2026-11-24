@@ -11,8 +11,8 @@
 }
 
 .trenner {
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     height: 20px;
     margin-top: 0;
     width: min(900px, 90%);
@@ -705,7 +705,7 @@ body {
 .icon-box {
     width: 200px;
     height: 200px;
-    color: rgb(6, 0, 10);
+    color: var(--main-purple);
     border-radius: 15px;
 
     display: flex;
@@ -721,6 +721,7 @@ body {
 /* Emojis Hover Animation */
 
 .icon-box i {
+    color: var(--main-purple);
     margin-bottom: 6px;
     transition: transform 0.3s, filter 0.25s ease, text-shadow 0.25s ease;
 }
